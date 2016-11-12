@@ -1,0 +1,321 @@
+/**
+ * This optional CSS file is only loaded when the ProcessHello module is run
+ *
+ * Remove it if you have no CSS styles to add.
+ *
+ */
+
+#CalendarAdmin-calendar {
+    max-width: 850px;
+    width: 90%;
+}
+
+#CalendarAdmin-tip {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 150px;
+    border: 1px solid #000;
+    background: #fff;
+    z-index: 1000;
+}
+
+#CalendarAdmin-tip p {
+    margin: 5px 10px 5px 10px;
+    /*overflow: scroll;*/
+}
+
+.CalendarAdmin-loading {
+    background: #ffffff 10px 10px no-repeat url('images/ajax-loader.gif');
+    margin-left: 42px;
+    line-height: 52px;
+}
+
+/* new event dialog */
+
+#CalendarAdmin-new-event-dialog {
+    display: none;
+    padding: 15px;
+}
+
+#CalendarAdmin-new-event-dialog input,
+#CalendarAdmin-new-event-dialog label {
+    display: block;
+}
+#CalendarAdmin-new-event-dialog label {
+    font-weight: bold;
+}
+
+#CalendarAdmin-new-event-dialog fieldset {
+    margin-top: 10px;
+}
+
+#CalendarAdmin-new-event-dialog .ca-ned-date {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* edit event dialog */
+
+#CalendarAdmin-edit-event-dialog {
+    display: none;
+    padding: 15px;
+}
+
+/* notifications */
+
+#CalendarAdmin-notification {
+    margin: 20px;
+    color: black;
+}
+#CalendarAdmin-notification.success {
+    background: #ddffdd;
+}
+#CalendarAdmin-notification.error{
+    background: #ffdddd;
+}
+
+#schedule {
+    color: #fff;
+    background-color: #fff;
+    border-color: #e6e6e6;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-appearance: none;
+}
+
+#schedule-toolbar {
+    height: 75px;
+    background-color: #3f51b5;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1em 1.286em;
+}
+
+#schedule-toolbar ul {
+    background-color: #3f51b5;
+}
+
+#schedule-toolbar li{
+    display: inline;
+    border-left-width: 1px;
+    border-width: 0 0 2px 0;
+    padding: 0 1.1em;
+}
+
+#schedule-navigation .next,.prev {
+    padding-left: .6em;
+    padding-right: .6em;
+}
+
+.k-icon {
+    opacity: 1;
+    vertical-align: middle;
+    background-image: url(./images/sprite.png);
+    border-color: transparent;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    background-color: transparent;
+}
+
+.k-i-arrow-w {
+    background-position: -16px -48px;
+}
+
+.k-i-arrow-e {
+    background-position: -16px -16px;
+}
+
+.k-i-calendar {
+    background-position: -48px -176px;
+    margin: -2px 6px 0 0;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.k-link {
+    color: #fff;
+    background-color: #3f51b5;
+    border-color: #3f51b5;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.k-link:hover, .k-link:focus {
+    color: #fff;
+}
+
+.k-sm-date-format {
+    display: none;
+}
+
+.fa {
+    color: #fff;;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size: 14px !important;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+#schedule-views {
+    float: right;
+}
+
+#schedule-agenda {
+    color: #444;
+    border-spacing: 0;
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+#schedule-agenda tr {
+    border-color: #e6e6e6;
+}
+
+.schedule-header {
+    background-color: #fafafa;
+}
+
+#schedule-agenda tr:not(:first-child):hover, .k-state-hover {
+    background-color: transparent;
+    background-color: #ebebeb;
+    border-color: #ebebeb;
+    webkit-box-shadow: 0 1px 0 rgba(255,255,255,.2);
+    box-shadow: 0 1px 0 rgba(255,255,255,.2);
+}
+
+#schedule-agenda th {
+    text-align: left;
+}
+
+#schedule-agenda th, td{
+    border-style: solid;
+    color: #a8a8a8;
+    border-width: 0px 1px 1px 1px;
+    border-spacing: 0;
+    padding: .334em .5em;
+}
+
+#schedule-agenda td {
+}
+
+.k-scheduler-datecolumn {
+    width: 12em;
+}
+
+.k-scheduler-timecolumn {
+    width: 11em;
+}
+
+.k-scheduler-timecolumn>div {
+    color: #444;
+    position: relative;
+    vertical-align: top;
+}
+
+.k-scheduler-agendaday {
+    height: 48px;
+    float: left;
+    margin: .5em .1em 0 0;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.k-scheduler-agendaweek {
+    display: block;
+    margin: .6em 0 0 0;
+    /*font-size: 0.9em;*/
+    font-style: normal;
+}
+
+.k-scheduler-agendadate {
+    font-size: .9em;
+}
+
+.k-task {
+    color: #444;
+}
+
+.k-si-close {
+    background-position: -176px -80px;
+}
+
+.k-event {
+    background-color: gainsboro;
+    float: right;
+    display: inline-block;
+    margin-left: 5px;
+    width: 19px;
+    padding-left: 2px;
+}
+
+.k-i-refresh {
+    background-position: -48px -112px;
+}
+
+.k-scheduler-mark {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-right: .5em;
+    border-radius: 50%;
+}
+
+.ReactModal__Overlay {
+    -webkit-perspective: 600px;
+    perspective: 600px;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transition: opacity 150ms ease-out;
+}
+
+.ReactModal__Content {
+    -webkit-transform: scale(0.5) rotateX(-30deg);
+    transform: scale(0.5) rotateX(-30deg);
+}
+
+.ReactModal__Content--after-open {
+    -webkit-transform: scale(1) rotateX(0deg);
+    transform: scale(1) rotateX(0deg);
+    transition: all 150ms ease-in;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.ReactModal__Content--before-close {
+    -webkit-transform: scale(0.5) rotateX(30deg);
+    transform: scale(0.5) rotateX(30deg);
+    transition: all 150ms ease-in;
+}
+
+.ReactModal__Content.modal-dialog {
+    border: none;
+    background-color: transparent;
+}
