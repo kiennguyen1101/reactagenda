@@ -2,8 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/dev-server',
+        // 'webpack-dev-server/client?http://localhost:8080',
+        // 'webpack/hot/dev-server',
         './app/index.js'
     ],
     resolve: {
@@ -36,10 +36,23 @@ module.exports = {
         hot: false,
         noInfo: true,
         colors: true,
-        quiet: false
+        quiet: false,
+        inline: true
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            'process.env':{
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: { warnings: false },
+            comments: false,
+            sourceMap: false,
+            mangle: true,
+            minimize: true
+        })
     ]
 
 
