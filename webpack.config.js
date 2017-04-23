@@ -1,14 +1,16 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: [
-        // 'webpack-dev-server/client?http://localhost:8080',
-        // 'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/dev-server',
         './app/index.js'
     ],
-    resolve: {
-        extensions: ['', '.js', '.jsx']
-    },
+    // resolve: {
+    //     extensions: ['', '.js', '.jsx']
+    // },
     output: {
         path: __dirname + '/app',
         // path: path.resolve(__dirname, 'app/'),
@@ -23,10 +25,22 @@ module.exports = {
                     path.resolve(__dirname, 'node_modules'),
                     path.resolve(__dirname, 'scripts'),
                 ],
-                include: [
-                    path.join(__dirname, 'app/'),
+                // include: [
+                //     path.join(__dirname, 'app/'),
+                // ],
+                // loaders: ['react-hot-loader/webpack', 'babel'],
+                loader: 'babel-loader',
+            },
+            {
+                test: /\.ts$/,
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'scripts'),
                 ],
-                loader: 'react-hot!babel',
+                // include: [
+                //     path.join(__dirname, 'app/'),
+                // ],
+                loader: 'babel-loader',
             }
         ]
     },
@@ -40,19 +54,31 @@ module.exports = {
         inline: true
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             'process.env':{
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false },
-            comments: false,
-            sourceMap: false,
-            mangle: true,
-            minimize: true
-        })
+        // new HtmlWebpackPlugin({
+        //     template: './app/index.html',
+        //     filename: 'index.html',
+        //     inject: 'body'
+        // }),
+
+
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: { warnings: false },
+        //     comments: false,
+        //     sourceMap: true,
+        //     mangle: true,
+        //     minimize: true
+        // }),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 
 

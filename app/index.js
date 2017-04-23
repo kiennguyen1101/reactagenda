@@ -1,9 +1,12 @@
-var React = require("react");
-var ReactDOM = require('react-dom');
-var ReactRedux = require('react-redux');
-var Redux = require('redux');
-var DatePicker = require('react-datepicker');
-var log = require('loglevel');
+const React = require("react");
+const ReactDOM = require('react-dom');
+const ReactRedux = require('react-redux');
+const Redux = require('redux');
+const DatePicker = require('react-datepicker');
+const log = require('loglevel');
+import moment from 'moment';
+import  'jquery';
+import 'bootstrap';
 import { reducer as formReducer } from 'redux-form';
 import {List, Map} from 'immutable';
 import EditModal  from './EditModal';
@@ -65,26 +68,6 @@ class DateSelectNext extends React.Component {
     }
 }
 
-/*class HiddenDateInput extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        log.debug(this.props);
-        return (
-            <button>
-                {this.props.value}
-            </button>
-        )
-    }
-}
-
-HiddenDateInput.proptypes = {
-    onClick: React.PropTypes.func,
-    value: React.PropTypes.string
-}*/
-
 class DateRange extends React.Component {
     constructor(props) {
         super(props);
@@ -135,7 +118,7 @@ class ScheduleToolBar extends React.Component {
                 <ul id="schedule-navigation">
                     <DateToday today={this.props.today}/>
                     <DateSelectPrev prev_range={this.props.prev_range}/>
-                    {/*<DateSelectNext next_range={this.props.next_range}/> */}
+                    <DateSelectNext next_range={this.props.next_range}/>
                     <DateRange duration={this.props.duration} choose_date={this.props.choose_date} />
                 </ul>
                 <DateRangeSelect />
