@@ -1,4 +1,5 @@
 import {List, Map} from 'immutable';
+import moment from 'moment';
 
 const duration = [
     '02/11/2016',
@@ -17,7 +18,7 @@ const events = [
 
 const INITIAL_STATE = Map({
     duration: duration,
-    events: events,
+    events: events
 });
 export const scheduleReducer = (state = INITIAL_STATE, action) => {
     let e = action.event;
